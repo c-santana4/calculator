@@ -1,0 +1,172 @@
+:root {
+    --darkblue-bg: hsl(222, 26%, 31%);
+    --darkblue-keypad-bg: hsl(223, 31%, 20%);
+    --darkblue-screen-bg: hsl(224, 36%, 15%);
+
+    --darkblue-key-bg: hsl(225, 21%, 49%);
+    --darkblue-key-shadow: hsl(224, 28%, 35%);
+
+    --red-key-bg: hsl(6, 63%, 50%);
+    --darkred-key-shadow: hsl(6, 70%, 34%);
+    
+    --orange-key-bg: hsl(30, 25%, 89%);
+    --orange-key-shadow: hsl(28, 16%, 65%);
+
+    --grayish-darkblue: hsl(221, 14%, 31%);
+    --white: hsl(0, 0, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--darkblue-bg);
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.container {
+    color: white;
+    width: 450px;
+    height: 550px;
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .navbar {
+    text-shadow: 4px 4px black;
+}
+
+.container .screen {
+    background: var(--darkblue-screen-bg);
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 9px;
+    margin: 15px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    box-shadow: 8px 8px black;
+}
+
+.container .screen input {
+    width: 90%;
+    margin: auto;
+    color: var(--white);
+    border: none;
+    background: none;
+    font-size: 34px;
+    text-align: end;
+}
+
+.keypad {
+    width: 100%;
+    height: 100%;
+    background: var(--darkblue-keypad-bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 8px;
+
+    box-shadow: 8px 8px black;
+}
+
+.keypad .keys {
+    width: 90%;
+    height: 90%;
+    padding-left: 10px;
+    list-style: none;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.keypad .keys .key {
+    width: 85px;
+    height: 50px;
+
+    background-color: var(--orange-key-shadow);
+    border: none;
+    border-radius: 7px;
+}
+
+.keypad .keys .key button {
+    width: 85px;
+    height: 45px;
+
+    padding-top: 7px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: var(--orange-key-bg);
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    transition: all 200ms ease-in-out;
+}
+
+.keypad .keys .key button:hover {
+    background: var(--orange-key-shadow);
+}
+
+.keypad .keys .key:nth-child(4), .keypad .keys .key:nth-child(17) {
+    background: var(--darkblue-key-shadow);
+}
+
+.keypad .keys .key .btn-delete, .keypad .keys .key .btn-reset {
+    background-color: var(--darkblue-key-bg);
+    color: var(--white);
+}
+
+.keypad .keys .key .btn-delete:hover {
+    background: var(--darkblue-key-shadow);
+}
+
+.keypad .keys .key .btn-reset:hover {
+    background: var(--darkblue-key-shadow);
+}
+
+.keypad .keys .key .btn-reset {
+    width: 100%;
+}
+
+.keypad .keys .key .btn-equal {
+    width: 100%;
+    background: var(--red-key-bg);
+    color: var(--white);
+    /* margin-left: 80.2px; */
+}
+
+.keypad .keys .key .btn-equal:hover {
+    background: var(--darkred-key-shadow);
+}
+
+.keypad .keys .key:nth-child(17) {
+    width: 185%;
+}
+
+.keypad .keys .key:nth-child(18) {
+    width: 185%;
+    background: var(--darkred-key-shadow);
+    position: relative;
+    left: 100px;
+}

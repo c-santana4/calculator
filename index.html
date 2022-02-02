@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <label>calculator</label>
+        </div>
+
+        <div class="screen">
+            <input type="text" id="inputNumbers" placeholder="0" disabled="true">
+        </div>
+
+        <div class="keypad">
+            <ul class="keys">
+                <li class="key"><button onclick="calculate(7)"> 7 </button></li>
+                <li class="key"><button onclick="calculate(8)"> 8 </button></li>
+                <li class="key"><button onclick="calculate(9)"> 9 </button></li>
+                <li class="key"><button onclick="del()" class="btn-delete"> DEL </button></li>
+                <li class="key"><button onclick="calculate(4)"> 4 </button></li>
+                <li class="key"><button onclick="calculate(5)"> 5 </button></li>
+                <li class="key"><button onclick="calculate(6)"> 6 </button></li>
+                <li class="key"><button onclick="calculate('+')"> + </button></li>
+                <li class="key"><button onclick="calculate(1)"> 1 </button></li>
+                <li class="key"><button onclick="calculate(2)"> 2 </button></li>
+                <li class="key"><button onclick="calculate(3)"> 3 </button></li>
+                <li class="key"><button onclick="calculate('-')"> - </button></li>
+                <li class="key"><button onclick="calculate('.')"> . </button></li>
+                <li class="key"><button onclick="calculate(0)"> 0 </button></li>
+                <li class="key"><button onclick="calculate('/')"> / </button></li>
+                <li class="key"><button onclick="calculate('*')"> * </button></li>
+                <li class="key"><button onclick="reset()" class="btn-reset"> reset </button></li>
+                <li class="key"><button onclick="equal()" class="btn-equal"> = </button></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
