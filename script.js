@@ -11,7 +11,8 @@ let equal = () => {
         document.getElementById("inputNumbers").value = result;
     } 
     catch (error) {
-        alert("erro!!!!! :D");
+        alert("Digite uma operação válida!");
+        reset();
     }
 }
 
