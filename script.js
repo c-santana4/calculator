@@ -1,11 +1,14 @@
 let result;
+let darkmode = false;
 
-let calculate = (number) => {
+const setTheme = theme => { document.documentElement.className = theme };
+
+const calculate = (number) => {
     document.getElementById("inputNumbers").value += number;
     result = document.getElementById("inputNumbers").value;
 }
 
-let equal = () => {
+const equal = () => {
     try {
         result=eval(result);
         document.getElementById("inputNumbers").value = result;
@@ -15,12 +18,12 @@ let equal = () => {
     }
 }
 
-let del = () => {
+const del = () => {
     result=result.slice(0,-1);
     document.getElementById("inputNumbers").value = result;
 }
 
-let reset = () => {
+const reset = () => {
     result = "";
     document.getElementById("inputNumbers").value = result;
 }

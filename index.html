@@ -15,9 +15,12 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div class="container">
+    <main class="container">
         <div class="navbar">
             <label>calculator</label>
+            
+            <img src="img/moon.svg" class="theme light" onclick="setTheme('light')"></img>
+            <img src="img/sun.svg" class="theme dark" onclick="setTheme('dark')"></img>
         </div>
 
         <div class="screen">
@@ -46,6 +49,6 @@
                 <li class="key"><button onclick="equal()" class="btn-equal"> = </button></li>
             </ul>
         </div>
-    </div>
+    </main>
 </body>
 </html>

@@ -1,19 +1,36 @@
-:root {
-    --darkblue-bg: hsl(222, 26%, 31%);
-    --darkblue-keypad-bg: hsl(223, 31%, 20%);
-    --darkblue-screen-bg: hsl(224, 36%, 15%);
+:root,
+:root.light {
+    --bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
 
-    --darkblue-key-bg: hsl(225, 21%, 49%);
-    --darkblue-key-shadow: hsl(224, 28%, 35%);
+    --extra-key-bg: hsl(225, 21%, 49%);
+    --extra-key-shadow: hsl(224, 28%, 35%);
 
-    --red-key-bg: hsl(6, 63%, 50%);
-    --darkred-key-shadow: hsl(6, 70%, 34%);
+    --enter-key-bg: hsl(6, 63%, 50%);
+    --enter-key-shadow: hsl(6, 70%, 34%);
     
-    --orange-key-bg: hsl(30, 25%, 89%);
-    --orange-key-shadow: hsl(28, 16%, 65%);
+    --key-bg: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
 
-    --grayish-darkblue: hsl(221, 14%, 31%);
-    --white: hsl(0, 0, 100%);
+    --white: hsl(0, 0%, 100%);
+}
+
+:root.dark {
+    --bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 75%);
+
+    --extra-key-bg: hsl(45, 7%, 89%);
+    --extra-key-shadow: hsl(35, 11%, 61%);
+
+    --enter-key-bg: hsl(25, 98%, 40%);
+    --enter-key-shadow: hsl(25, 99%, 27%);
+    
+    --key-bg: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+
+    --white: hsl(0, 0%, 0%);
 }
 
 * {
@@ -23,7 +40,7 @@
 }
 
 body {
-    background: var(--darkblue-bg);
+    background: var(--bg);
 
     font-family: 'Spartan', sans-serif;
     font-size: 30px;
@@ -31,7 +48,7 @@ body {
 }
 
 .container {
-    color: white;
+    color: var(--white);
     width: 450px;
     height: 550px;
     margin: 10vh auto;
@@ -39,12 +56,43 @@ body {
     flex-direction: column;
 }
 
-.container .navbar {
+.light .container .navbar label {
     text-shadow: 4px 4px black;
 }
 
+.dark .container .navbar label {
+    text-shadow: 4px 4px rgba(31, 31, 31, 0.274);
+}
+
+.container .theme {
+    cursor: pointer;
+    float: right;
+    width: 2.5rem;
+    /* border-radius: 20%; */
+    background-color: transparent;
+    /* background-color: var(--orange-key-shadow); */
+}
+
+.container .theme img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.theme.light {
+    display: none;
+}
+  
+.dark .theme.dark {
+    display: none;
+}
+
+.dark .theme.light {
+    display: block;
+}
+
 .container .screen {
-    background: var(--darkblue-screen-bg);
+    background: var(--screen-bg);
     width: 100%;
     height: 150px;
     border: none;
@@ -55,7 +103,7 @@ body {
     align-items: center;
     justify-content: flex-end;
     
-    box-shadow: 8px 8px black;
+    box-shadow: 8px 8px rgb(31, 31, 31);
 }
 
 .container .screen input {
@@ -71,7 +119,7 @@ body {
 .keypad {
     width: 100%;
     height: 100%;
-    background: var(--darkblue-keypad-bg);
+    background-color: var(--keypad-bg);
 
     display: flex;
     justify-content: center;
@@ -80,7 +128,7 @@ body {
     border: none;
     border-radius: 8px;
 
-    box-shadow: 8px 8px black;
+    box-shadow: 8px 8px rgb(31, 31, 31);
 }
 
 .keypad .keys {
@@ -98,7 +146,7 @@ body {
     width: 85px;
     height: 50px;
 
-    background-color: var(--orange-key-shadow);
+    background-color: var(--key-shadow);
     border: none;
     border-radius: 7px;
 }
@@ -115,7 +163,7 @@ body {
     border: none;
     border-radius: 7px;
 
-    background-color: var(--orange-key-bg);
+    background-color: var(--key-bg);
 
     font-family: 'Spartan', sans-serif;
     font-size: 20px;
@@ -125,24 +173,24 @@ body {
 }
 
 .keypad .keys .key button:hover {
-    background: var(--orange-key-shadow);
+    background: var(--key-shadow);
 }
 
 .keypad .keys .key:nth-child(4), .keypad .keys .key:nth-child(17) {
-    background: var(--darkblue-key-shadow);
+    background: var(--extra-key-shadow);
 }
 
 .keypad .keys .key .btn-delete, .keypad .keys .key .btn-reset {
-    background-color: var(--darkblue-key-bg);
+    background-color: var(--extra-key-bg);
     color: var(--white);
 }
 
 .keypad .keys .key .btn-delete:hover {
-    background: var(--darkblue-key-shadow);
+    background: var(--extra-key-shadow);
 }
 
 .keypad .keys .key .btn-reset:hover {
-    background: var(--darkblue-key-shadow);
+    background: var(--extra-key-shadow);
 }
 
 .keypad .keys .key .btn-reset {
@@ -151,13 +199,13 @@ body {
 
 .keypad .keys .key .btn-equal {
     width: 100%;
-    background: var(--red-key-bg);
+    background: var(--enter-key-bg);
     color: var(--white);
     /* margin-left: 80.2px; */
 }
 
 .keypad .keys .key .btn-equal:hover {
-    background: var(--darkred-key-shadow);
+    background: var(--enter-key-shadow);
 }
 
 .keypad .keys .key:nth-child(17) {
@@ -166,7 +214,7 @@ body {
 
 .keypad .keys .key:nth-child(18) {
     width: 185%;
-    background: var(--darkred-key-shadow);
+    background: var(--enter-key-shadow);
     position: relative;
     left: 100px;
 }
