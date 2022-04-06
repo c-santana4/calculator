@@ -51,7 +51,7 @@ body {
     color: var(--white);
     width: 450px;
     height: 550px;
-    margin: 10vh auto;
+    margin: 8vh auto;
     display: flex;
     flex-direction: column;
 }
